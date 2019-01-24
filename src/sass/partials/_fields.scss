@@ -1,0 +1,126 @@
+.option {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  > input {
+    position: absolute;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    opacity: 0;
+  }
+}
+
+.checkbox, .radio {
+  display: block;
+  height: 100%;
+  background: white;
+  border: 2px solid #d9d9d9;
+  border-radius: 2px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.checkbox:before, .radio:before {
+  content: '';
+  display: none;
+}
+
+input:hover + {
+  .checkbox, .radio {
+    border-color: #ccc;
+  }
+}
+
+.checkbox:hover, .radio:hover {
+  border-color: #ccc;
+}
+
+input {
+  &:focus + {
+    .checkbox, .radio {
+      border-color: #3fb6f2;
+    }
+  }
+  &.focus + {
+    .checkbox, .radio {
+      border-color: #3fb6f2;
+    }
+  }
+  &:checked + {
+    .checkbox:before, .radio:before {
+      display: block;
+    }
+  }
+}
+
+.checkbox:before {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  width: 7px;
+  height: 3px;
+  border: solid #aaa;
+  border-width: 0 0 3px 3px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+input {
+  &:focus + .checkbox:before, &.focus + .checkbox:before {
+    border-color: #19a7ef;
+  }
+}
+
+.radio {
+  border-radius: 9px;
+  &:before {
+    margin: 4px;
+    width: 6px;
+    height: 6px;
+    background: #aaa;
+    border-radius: 3px;
+  }
+}
+
+input {
+  &:focus + .radio:before, &.focus + .radio:before {
+    background: #19a7ef;
+  }
+}
+
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  height: 33px;
+  line-height: 33px;
+  text-decoration: none;
+  padding: 0 16px;
+  font-size: 13px;
+  color: #243140;
+  text-align: center;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.2);
+  background: #e5e7ed;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  &.btn-green {
+    color: white;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.08);
+    background: #4ebd4a;
+  }
+}
