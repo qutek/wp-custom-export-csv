@@ -281,7 +281,8 @@ final class WP_Custom_Export_CSV {
 
         $filename = 'class-' . str_replace('_', '-', strtolower( $class_name ) )  . '.php';
         foreach ( $this->file_iterator as $file ) {
-            if ( strtolower( $file->getFilename() ) === $filename ) {
+            // use strpos to autoload abstract-class-* 
+            if ( strpos($file->getFilename(), $filename) !== false) {
                 if ( $file->isReadable() ) {
                     include_once $file->getPathname();
                 }
